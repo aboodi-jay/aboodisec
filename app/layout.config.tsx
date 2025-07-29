@@ -22,7 +22,7 @@ nav: {
       alt="Logo"
       className='mr-2 '
     />
-    <span className="text-purple-400"> ABOODI-SEC</span>
+    <span className="text-purple-700"> ABOODISEC</span>
     </>
   ),
 },
