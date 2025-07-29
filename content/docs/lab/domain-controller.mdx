@@ -1,0 +1,142 @@
+---
+title: Setting up Domain Controller 🖥️
+description: This section will explain in detail regarding how to setup the Domain Controller 
+---
+
+# Renaming your PC
+
+Firstly, we have to rename our PC so that it is easier to reference later on. See below:
+
+<center> <img src="/22.png" width="600" height="600" class="center" /> </center>
+
+Click **Rename this PC**:
+
+<center> <img src="/23.png" width="500" height="600" class="center" /> </center>
+
+Enter **"HYDRA-DC"**:
+
+<center> <img src="/24.png" width="600" height="600" class="center" /> </center>
+
+# Promoting to Domain Controller
+
+In the top right of the **Server Manager Dashboard**, click on **Manage** > **Add Roles and Features:**
+
+<center> <img src="/25.png" width="400" height="600" class="center" /> </center>
+
+Click **Next** on the Wizard:
+
+<center> <img src="/26.png" width="700" height="600" class="center" /> </center>
+
+Select **Role-based or feature-based installation** and click **Next**:
+
+<center> <img src="/27.png" width="700" height="600" class="center" /> </center>
+
+Click **Next**:
+
+<center> <img src="/28.png" width="700" height="600" class="center" /> </center>
+
+Make sure to select **Active Directory Domain Services** then click **Next**:
+
+<center> <img src="/29.png" width="700" height="600" class="center" /> </center>
+
+Click **Add Features**:
+
+<center> <img src="/30.png" width="500" height="600" class="center" /> </center>
+
+Leave it as it is and click **Next**:
+
+<center> <img src="/31.png" width="700" height="600" class="center" /> </center>
+
+Click **Next**:
+
+<center> <img src="/32.png" width="700" height="600" class="center" /> </center>
+
+Tick **Restart the destination server automatically if required** and then click **Install**:
+
+<center> <img src="/33.png" width="700" height="600" class="center" /> </center>
+
+Click **Promote this server to a domain controller**:
+
+<center> <img src="/34.png" width="700" height="600" class="center" /> </center>
+
+Add a new forest and name it **MARVEL.local**:
+
+<center> <img src="/35.png" width="700" height="600" class="center" /> </center>
+
+Set the same password as our Admin account (P@$$w0rd!)
+
+<center> <img src="/36.png" width="700" height="600" class="center" /> </center>
+
+Click **Next**:
+
+<center> <img src="/37.png" width="700" height="600" class="center" /> </center>
+
+Wait until the domain name gets populated:
+
+<center> <img src="/38.png" width="700" height="600" class="center" /> </center>
+
+Leave it as default and hit **Next**:
+
+<center> <img src="/39.png" width="700" height="600" class="center" /> </center>
+
+Hit **Next** again:
+
+<center> <img src="/40.png" width="700" height="600" class="center" /> </center>
+
+Click **Install** after the wait
+
+<center> <img src="/41.png" width="700" height="600" class="center" /> </center>
+
+Wait for your computer to be restarted:
+
+<center> <img src="/42.png" width="700" height="600" class="center" /> </center>
+
+Once it's done restarting, enter the password that you set up for your original admin account.
+
+<center> <img src="/43.png" width="600" height="600" class="center" /> </center>
+
+You have now logged in to your Domain Controller for the very first time
+
+# Setting up Certificate Services
+
+There's one more thing we need to do and that is to set up certificate services. So click on **Manage > Add Roles and Features**:
+
+<center> <img src="/44.png" width="300" height="600" class="center" /> </center>
+
+Click **Next** on the first screen, then select **Role-Based or feature-based installation**:
+
+<center> <img src="/45.png" width="700" height="600" class="center" /> </center>
+
+Click **Next** again, until you're on the Server Roles screen. Then make sure to tick **Active Directory Certificate Services**:
+
+<center> <img src="/46.png" width="700" height="600" class="center" /> </center>
+
+Click **Add Features** and then **Next** until you reach the **Role Services** Screen. Make sure the **Certificate Authority** option is ticked.
+
+<center> <img src="/47.png" width="700" height="600" class="center" /> </center>
+
+Tick the restart option:
+
+<center> <img src="/48.png" width="700" height="600" class="center" /> </center>
+
+Once the installation is done, click **Configure AD CS on the destination server**:
+
+<center> <img src="/49.png" width="700" height="600" class="center" /> </center>
+
+Hit **Next** and then tick **Certificate Authority**:
+
+<center> <img src="/50.png" width="700" height="600" class="center" /> </center>
+
+Keep **Enterprise CA** checked, Root Ca checked, Create a new private key also checked.
+
+On the Cryptography section, SHA256 is fine:
+
+<center> <img src="/51.png" width="700" height="600" class="center" /> </center>
+
+Leave the CA Names as same, set the validity period to 99 years (because we want to have this lab long term):
+
+<center> <img src="/52.png" width="700" height="600" class="center" /> </center>
+
+Keep clicking **Next** until you're done. Then restart your machine.
+
+.. and just like that, your domain controller is set up. In the next section, we'll set up our user machines.

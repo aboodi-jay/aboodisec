@@ -1,0 +1,14 @@
+{
+  "title": "Active Directory Lab Setup",
+  "description": "How to build an AD Lab",
+  "root": true,
+  "pages": [
+    "introduction",
+    "downloading-isos",
+    "domain-controller",
+    "machines",
+    "configurations",
+    "joining-machines"
+
+  ]
+}

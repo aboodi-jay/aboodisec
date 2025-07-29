@@ -1,0 +1,98 @@
+---
+title: Downloading Necessary ISOs 🗃️
+description: This part covers downloading all the required files and creating the Windows Server Virtual Machine 
+---
+import { BookIcon, ComputerIcon, NetworkIcon } from 'lucide-react'
+
+# Downloads 💾
+Navigate to https://www.microsoft.com/en-us/evalcenter/evaluate-windows-10-enterprise and click on **Download the ISO - Enterprise**
+
+<center> <img src="/1.png" width="600" height="600" /> </center>
+
+Fill random info in the form, Click 64-Bit Edition and it'll begin installing
+
+<center> <img src="/3.png" width="600" height="600" /> </center>
+
+Navigate to https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2022 and repeat the same process, downloading the 64-bit edition ISO
+
+<center> <img src="/4.png" width="600" height="600" /> </center>
+
+## Windows Server Installation 🪟
+
+When it's done downloading, open your VMware Workstation and go to
+
+**File > New Virtual machine**
+
+As shown below:
+
+<center> <img src="/5.png" width="400" height="400" /> </center>
+
+Continue with typical and click next:
+
+<center> <img src="/6.png" width="400" height="600" /> </center>
+
+Browse and select your Windows server file
+(the one named SERVER_EVAL_x64FRE_en-us) and click next:
+
+<center> <img src="/7.png" width="500" height="600" class="center" /> </center>
+
+Just leave the windows key screen empty:
+
+<center> <img src="/8.png" width="500" height="600" class="center" /> </center>
+
+Keep it 60 GB and select the "Split Virtual Disk into multiple files" option and click next:
+
+<center> <img src="/9.png" width="500" height="600" class="center" /> </center>
+
+Untick the "Power on this virtual machine after creation" option and click Finish.
+
+Now go to vmware settings by right clicking on the vm name and click settings as shown below:
+
+<center> <img src="/11.png" width="400" height="600" class="center" /> </center>
+
+Here you want to do two things:
+
+- If your pc has 16 GB RAM select 4 GB RAM here:
+- Select the floppy disk (if its there in the devices) and click remove on the bottom (it is troublesome when you are installing the Windows OS Later)
+Once that is done, launch your VM.
+<center> <img src="/12.png" width="800" height="600" class="center" /> </center>
+
+Keep clicking next until you come to this screen, then make sure you select Standard Evaluation (Desktop Experience):
+
+<center> <img src="/13.png" width="600" height="600" class="center" /> </center>
+
+In the next screen, make sure to select custom:
+
+<center> <img src="/14.png" width="600" height="600" class="center" /> </center>
+
+Click ☀️New:
+
+<center> <img src="/15.png" width="700" height="600" class="center" /> </center>
+
+Click Apply then your disk will be partitioned, click next:
+
+<center> <img src="/16.png" width="500" height="600" class="center" /> </center>
+
+Once you're done with the installation, it'll ask you for your password. Use a weak password that you can remember and that actually follows the password rules: (or just use P@$$w0rd!)
+
+<Callout title="Suggestion"> I **highly** recommend writing these passwords somewhere.</Callout>
+
+<center> <img src="/18.png" width="700" height="600" class="center" /> </center>
+
+When you first log on to the machine, the screen will be small as shown below:
+
+<center> <img src="/19.png" width="800" height="600" class="center" /> </center>
+
+To solve this issue, download vmware tools by clicking on Workstation > VM > Install VMware Tools :
+
+<center> <img src="/20.png" width="500" height="600" class="center" /> </center>
+
+If the option is greyed out, don't worry, I got you
+
+Follow this guide and it should work: https://www.ghacks.net/2019/04/25/how-to-install-vmware-tools-if-the-option-is-grayed-out/
+
+Once you've installed vmware tools, go to file explorer in the vm and a dvd drive should be visible, click on that and run setup64. Once its done, restart your machine:
+
+<center> <img src="/21.png" width="800" height="600" class="center" /> </center>
+
+We're done with installing the Windows Server. In the next section we'll be installing and setting up the Domain Controller. See you there!

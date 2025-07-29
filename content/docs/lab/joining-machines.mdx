@@ -1,0 +1,35 @@
+---
+title: Joining Machines to the Domain ➕
+description: This is the part where we actually connect our machines to our domain controller, thus completing the active directory setup
+---
+# Networking
+
+If you have 16 GB, you can set the workstation ram to 2 GB, the punisher and spiderman machines to 4 GB each and that will be sufficient:
+
+<center> <img src="/96.png" width="600" height="600" class="center" /> </center>
+Now for connectivity, click network and internet settings here:
+<center> <img src="/97.png" width="350" height="600" class="center" /> </center>
+Click **Change adapter options:**
+<center> <img src="/98.png" width="400" height="600" class="center" /> </center>
+Paste in the "Preferred DNS server" the IP of your domain controller
+
+*(If you still don't know how to get ip address, go to your domain controller machine, open cmd and type ipconfig and copy your ip address)*
+<center> <img src="/99.png" width="1000" height="800" class="center" /> </center>
+Go to the punisher machine and search for domain, click on the first option as shown below:
+<center> <img src="/100.png" width="600" height="600" class="center" /> </center>
+Click on connect, then click **Join this device to a local Active Directory domain:**
+<center> <img src="/101.png" width="700" height="600" class="center" /> </center>
+Name it MARVEL.local, if you're following the same naming scheme as us
+
+Enter your administrator account and password same as the domain controller:
+<center> <img src="/102.png" width="500" height="600" class="center" /> </center>
+Select the account type as administrator and click next, then restart.
+<center> <img src="/103.png" width="500" height="600" class="center" /> </center>
+Back on the domain controller machine, Click Active Directory Users and Computers:
+<center> <img src="/104.png" width="400" height="600" class="center" /> </center>
+And here you can see that both of our machines now showup in the AD.
+<center> <img src="/105.png" width="700" height="600" class="center" /> </center>
+
+..and thats a wrap, congratulations.
+
+You've set up your active directory lab that you can pentest with different tools.
