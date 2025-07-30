@@ -47,7 +47,7 @@ export default function HomePage() {
             Methods for security testing Android applications.
           </p>
             <p className="text-yellow-800 dark:text-yellow-500 font-bold" >
-            ⚠️ Work in Progress</p>
+            ⚠️ Work in not Progress</p>
         </div>
 
       </section>
@@ -72,7 +72,7 @@ export default function HomePage() {
             LinkedIn
           </a>
           <a
-            href="https://github.com/your-github" // Replace with your GitHub URL
+            href="https://github.com/aboodi-jay/aboodisec" // Replace with your GitHub URL
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center px-6 py-3 border border-purple-600 dark:border-purple-400 text-base font-medium rounded-full text-purple-600 hover:bg-purple-50 transition-all duration-300 ease-in-out dark:text-purple-400 dark:hover:bg-gray-700"
@@ -84,45 +84,3 @@ export default function HomePage() {
     </main>
   );
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-
-import Link from 'next/link';
-
-export default function HomePage() {
-  return (
-    <main className="flex flex-1 flex-col justify-center text-center">
-      <h1 className="mb-4 text-2xl font-bold">Hello World</h1>
-      <p className="text-fd-muted-foreground">
-        You can open{' '}
-        <Link
-          href="/docs"
-          className="text-fd-foreground font-semibold underline"
-        >
-          /docs
-        </Link>{' '}
-        and see the documentation.
-      </p>
-    </main>
-  );
-}
-
-*/
