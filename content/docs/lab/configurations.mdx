@@ -1,0 +1,100 @@
+---
+title: Setting up Users, Groups and Policies 📜
+description: We'll be setting up a couple of things that are intentionally misconfigured to simulate real-life vulnerable environments
+---
+
+# Adding Users
+
+Switch to your Windows Server and log into it. In the server manager dashboard:
+
+Click **Tools > Active Directory Users and Computers**
+<center> <img src="/68.png" width="400" height="600" class="center" /> </center>
+We create some user accounts for the purpose of enumerating or hacking on them later.
+
+Right click the administrator and click copy:
+<center> <img src="/69.png" width="500" height="600" class="center" /> </center>
+Since we're using a marvel theme, lets name him Tony Stark, click next and finish:
+<center> <img src="/70.png" width="450" height="600" class="center" /> </center>
+Click Copy Administrator and create another account with the following name:
+<center> <img src="/72.png" width="450" height="600" class="center" /> </center>
+Assign an easy password (like Password1)
+
+Right click on the empty area and go to New > Users
+
+<center> <img src="/73.png" width="600" height="600" class="center" /> </center>
+Name it fcastle and assign an easy password.
+
+Create one named pparker as well:
+<center> <img src="/74.png" width="450" height="600" class="center" /> </center>
+# Creating a new share
+We will also create a share (intended for hacking it later):
+
+So in your server manager, click on shares:
+<center> <img src="/75.png" width="600" height="600" class="center" /> </center>
+Click Tasks and then New Share..:
+<center> <img src="/76.png" width="600" height="600" class="center" /> </center>
+Leave the default option and click next:
+<center> <img src="/77.png" width="600" height="600" class="center" /> </center>
+Leave it as it is and click next:
+<center> <img src="/78.png" width="600" height="600" class="center" /> </center>
+Name it **hackme** then click next:
+<center> <img src="/79.png" width="600" height="600" class="center" /> </center>
+Leave it as is and click next:
+<center> <img src="/80.png" width="600" height="600" class="center" /> </center>
+Permissions are fine as it is, proceed:
+<center> <img src="/81.png" width="600" height="600" class="center" /> </center>
+We now create a file share that we can abuse later on.
+
+Go to the Server Manager and click on File and Storage Services as shown below
+<center> <img src="/82.png" width="600" height="600" class="center" /> </center>
+Click Create and then click next. Confirm and close:
+<center> <img src="/83.png" width="600" height="600" class="center" /> </center>
+
+# Creating an SPN for the SQLServer
+
+Now we setup our service account fully, that we created named SQLService.
+
+Open a cmd as administrator and enter the following command to setup your SPN:
+```
+setspn -a HYDRA-DC/SQLService.MARVEL.local:60111 MARVEL\SQLService
+```
+
+Once you enter this command you should get the following output:
+
+<center> <img src="/84.png" width="700" height="600" class="center" /> </center>
+To check if it worked enter:
+
+```
+setspn -T MARVEL.local -Q */*
+```
+
+
+If existing spn found is written it means the spn was created, there is other information but u can ignore it for now.
+<center> <img src="/85.png" width="700" height="600" class="center" /> </center>
+
+# Setting up a group policy
+
+Next we're gonna be setting a group policy that applies to all the machines.
+
+Search "group" and click Group Policy Management:
+<center> <img src="/86.png" width="600" height="600" class="center" /> </center>
+Click MARVEL.local and click create a GPO:
+<center> <img src="/87.png" width="800" height="600" class="center" /> </center>
+Call it disable windows defender and click ok:
+<center> <img src="/88.png" width="800" height="600" class="center" /> </center>
+Right click it and select edit:
+<center> <img src="/90.png" width="500" height="600" class="center" /> </center>
+A screen like this will pop up, we are gonna disable anti-virus here so that we can actually run our attacks.
+<center> <img src="/91.png" width="700" height="600" class="center" /> </center>
+Expand this, and what you're looking for is microsoft defender antivirus
+<center> <img src="/92.png" width="800" height="600" class="center" /> </center>
+Double click on the highlighted option
+<center> <img src="/93.png" width="900" height="600" class="center" /> </center>
+Click enabled, then apply, then ok
+<center> <img src="/94.png" width="600" height="600" class="center" /> </center>
+Right click it and select enforced
+<center> <img src="/95.png" width="800" height="600" class="center" /> </center>
+
+What we have done is we've basically created a Group Policy that disables windows defender on every device that is joined to the domain
+
+Next section covers how to join the machines to the domain:
