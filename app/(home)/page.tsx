@@ -57,14 +57,14 @@ export default function HomePage() {
       {/* Socials Section */}
       <section className="text-center max-w-4xl mx-auto mt-16 px-4">
         <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-gray-800 dark:text-gray-200">
-          Connect with Me
+          Let's connect :)
         </h2>
         <p className="text-lg text-gray-700 dark:text-gray-300 mb-6">
           Find me on my social media channels for updates and more!
         </p>  
         <div className="flex flex-col sm:flex-row justify-center gap-6">
           <a
-            href="https://www.linkedin.com/in/your-linkedin" // Replace with your LinkedIn URL
+            href="https://www.linkedin.com/in/abdullahmjaved" // Replace with your LinkedIn URL
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center px-6 py-3 border border-purple-600 dark:border-purple-400 text-base font-medium rounded-full text-purple-600 hover:bg-purple-50 transition-all duration-300 ease-in-out dark:text-purple-400 dark:hover:bg-gray-700"
@@ -75,18 +75,10 @@ export default function HomePage() {
             href="https://github.com/your-github" // Replace with your GitHub URL
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-full text-white bg-gray-700 hover:bg-gray-800 transition-all duration-300 ease-in-out dark:bg-gray-600 dark:hover:bg-gray-700"
-          >
-            GitHub
-          </a>
-          <a
-            href="https://www.instagram.com/your-instagram" // Replace with your Instagram URL
-            target="_blank"
-            rel="noopener noreferrer"
             className="inline-flex items-center justify-center px-6 py-3 border border-purple-600 dark:border-purple-400 text-base font-medium rounded-full text-purple-600 hover:bg-purple-50 transition-all duration-300 ease-in-out dark:text-purple-400 dark:hover:bg-gray-700"
           >
-            Instagram
-          </a>
+            GitHub
+          </a>          
         </div>
       </section>
     </main>
