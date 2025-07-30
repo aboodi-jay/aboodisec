@@ -72,7 +72,7 @@ export default function HomePage() {
             LinkedIn
           </a>
           <a
-            href="https://github.com/your-github" // Replace with your GitHub URL
+            href="https://github.com/aboodi-jay/aboodisec" // Replace with your GitHub URL
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center px-6 py-3 border border-purple-600 dark:border-purple-400 text-base font-medium rounded-full text-purple-600 hover:bg-purple-50 transition-all duration-300 ease-in-out dark:text-purple-400 dark:hover:bg-gray-700"
