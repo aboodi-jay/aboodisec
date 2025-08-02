@@ -33,7 +33,7 @@ export default function Layout({ children }: { children: ReactNode }) {
               case 'Active Directory Lab Setup':
                 icon = <Waypoints size={20} />;
                 break;
-              case 'Attacking Active Directory':
+              case 'Active Directory Pentesting':
                 icon = <ServerOff size={20} />;
                 break;
               default:

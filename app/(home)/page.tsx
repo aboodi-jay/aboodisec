@@ -48,16 +48,16 @@ export default function HomePage() {
             Set up and explore an Active Directory home lab for learning
           </p>
         </a>
-        <div className="cursor-not-allowed bg-white border border-purple-600 dark:border-purple-500 dark:bg-[#1a1820] rounded-xl shadow-lg p-6 text-center transition-transform duration-300 hover:scale-105 hover:shadow-x1 animate-box-entry"
+        <a
+          href="/docs/ad-pentesting/enumeration"
+          className="block bg-white border border-purple-600 dark:border-purple-500 dark:bg-[#1a1820] rounded-xl shadow-lg p-6 text-center transition-transform duration-300 hover:scale-105 hover:shadow-x1 group animate-box-entry"
         style= {{ animationDelay: '0.3s' }}
         >
           <h2 className="text-xl font-semibold mb-4 text-purple-600 dark:text-purple-500">Active Directory Pentesting</h2>
           <p className="mb-5 text-gray-700 dark:text-gray-300">
             Techniques and tools for assessing security in Active Directory.
           </p>
-           <p className="text-yellow-800 dark:text-yellow-500 font-bold">
-            ⚠️ Work in progress </p>
-        </div>
+          </a>
         <div className="cursor-not-allowed bg-white border border-purple-600 dark:border-purple-500 dark:bg-[#1a1820] rounded-xl shadow-lg p-6 text-center transition-transform duration-300 hover:scale-105 hover:shadow-x1 animate-box-entry"
         style= {{ animationDelay: '0.4s' }}
         >
